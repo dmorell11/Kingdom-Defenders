@@ -93,7 +93,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 957498602768251698, guid: 3022e36a8864f2e42956759a1f8cf3b1, type: 3}
       propertyPath: m_Name
-      value: ile_RoadStraight
+      value: Tile_RoadStraight
       objectReference: {fileID: 0}
     - target: {fileID: 1957687687613017162, guid: 3022e36a8864f2e42956759a1f8cf3b1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -133,6 +133,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1957687687613017162, guid: 3022e36a8864f2e42956759a1f8cf3b1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2441541472862306477, guid: 3022e36a8864f2e42956759a1f8cf3b1, type: 3}
+      propertyPath: IsPlaceable
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
