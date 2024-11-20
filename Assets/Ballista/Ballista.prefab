@@ -4839,6 +4839,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3049131714819384361}
+  - component: {fileID: -4409224031752316534}
   - component: {fileID: 5667641125554646401}
   m_Layer: 0
   m_Name: Ballista
@@ -4864,6 +4865,18 @@ Transform:
   - {fileID: 3144582324300694500}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-4409224031752316534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3219458064393657486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e3cd7e648d038e448c7f6684118cf99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5667641125554646401
 MonoBehaviour:
   m_ObjectHideFlags: 0
