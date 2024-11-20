@@ -4,38 +4,26 @@ using UnityEngine;
 
 public class EnemyMover : MonoBehaviour
 {
-    [SerializeField]
-    List<Waypoint> path = new List<Waypoint>();
+    [SerializeField] List<Waypoint> path = new List<Waypoint>();
+    [SerializeField][Range(0f, 5f)] float speed = 1f;
 
-    [SerializeField] 
-    float waitTime = 1f;
-
-    [SerializeField]
-    [Range(0f, 5f)]
-    float speed;
-
-    // Start is called before the first frame update
     void Start()
     {
+        FindPath();
+        ReturnToStart();
         StartCoroutine(FollowPath());
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     IEnumerator FollowPath()
     {
-        foreach(var waypoint in path)
+        foreach (Waypoint waypoint in path)
         {
-            Vector3 startPosition = transform.localPosition;
-            Vector3 endPosition = waypoint.transform.localPosition;
+            Vector3 startPosition = transform.position;
+            Vector3 endPosition = waypoint.transform.position;
+            float travelPercent = 0f;
 
             transform.LookAt(endPosition);
 
-            float travelPercent = 0f;
             while (travelPercent < 1f)
             {
                 travelPercent += Time.deltaTime * speed;
@@ -43,5 +31,30 @@ public class EnemyMover : MonoBehaviour
                 yield return new WaitForEndOfFrame();
             }
         }
+
+        Destroy(gameObject);
+    }
+
+    void FindPath()
+    {
+        path.Clear();
+
+        GameObject pathParent = GameObject.FindGameObjectWithTag("Path");
+
+        foreach (Transform child in pathParent.transform)
+        {
+            Waypoint waypoint = child.GetComponent<Waypoint>();
+
+            if (waypoint != null)
+            {
+                path.Add(waypoint);
+            }
+        }
+
+    }
+
+    void ReturnToStart()
+    {
+        transform.position = path[0].transform.position;
     }
 }
